@@ -1,6 +1,6 @@
 package com.wildcodeschool.bootcamp;
 
-public class Main {
+public class LiveCoding20191125 {
 
 	public static void main(String[] args) {
 
