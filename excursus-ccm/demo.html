@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live-Coding: ccm</title>
+  <script src="https://ccmjs.github.io/akless-components/menu/ccm.menu.js"></script>
+  <script src="https://ccmjs.github.io/akless-components/quiz/ccm.quiz.js"></script>
+</head>
+<body>
+  <ccm-menu>
+    <ccm-load-css src="https://ccmjs.github.io/akless-components/menu/resources/tabs.css"></ccm-load-css>
+    <entry title="Title A">
+      <ccm-quiz>
+        <question text="Frage 1">
+          <answer text="Antwort A" correct comment="Weil's richtig ist."></answer>
+          <answer text="Antwort B"></answer>
+        </question>
+      </ccm-quiz>
+    </entry>
+    <entry title="Title B">
+      <img width="600px" src="https://akless.github.io/akless/resources/images/seal.jpg">
+    </entry>
+  </ccm-menu>
+</body>
+</html>
