@@ -1,0 +1,57 @@
+.row > div > div {
+	background-color: grey;
+	margin: 10px;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+h1 {
+	text-align: center;
+}
+
+.jumbotron {
+	background-image: url('https://akless.github.io/akless/resources/images/goldgrotte.png');
+	background-size: cover;
+	color: white;
+	height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#title {
+	margin: 100px;
+	padding: 10px;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 20px;
+}
+
+.card-deck {
+	margin: 10px;
+}
+
+.card {
+	cursor: pointer;
+}
+
+.card:hover {
+	border: 3px solid black;
+}
+
+a * {
+	color: black;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
