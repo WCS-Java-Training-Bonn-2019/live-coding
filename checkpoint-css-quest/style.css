@@ -1,0 +1,127 @@
+/* Don't touch this ! */
+html {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6em;
+}
+body, h1, h2, h3, ul, li, a, p {
+    margin: 0;
+    padding: 0;
+}
+h2, h3 {
+    font-size: 1em;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+article p {
+    font-size: 0.8em;
+    padding: 10px;
+}
+footer {
+    font-size: 0.8em;
+}
+
+/* Your code here */
+
+body, a {
+    color: #39424E;
+}
+
+body > * {
+    margin: 0.5em;
+}
+
+@media (max-width: 767px) {
+    header section {
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    footer li:first-child {
+        color: white;
+        font-weight: bold;
+    }
+
+    footer ul {
+        list-style-type: none;
+        padding: 0.5em;
+    }
+}
+
+@media (min-width: 768px) {
+    header section {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    section.articles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    article {
+        width: 250px;
+    }
+
+    footer section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 1em;
+    }
+
+    footer section ul {
+        list-style-type: none;
+    }
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0.5em;
+}
+
+header + section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header + section a {
+    margin: 1em;
+    background-color: #F76C6C;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    color: white;
+}
+
+article {
+    padding: 0.5em;
+}
+
+article p {
+    padding: 0;
+}
+
+footer {
+    background-color: #39424E;
+    padding: 0.5em;
+}
+
+footer,
+footer a {
+    color: white;
+}
