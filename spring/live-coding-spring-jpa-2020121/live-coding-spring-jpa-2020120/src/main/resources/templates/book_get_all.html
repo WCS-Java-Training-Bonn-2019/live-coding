@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Book list</title>
+</head>
+<body>
+<section>
+<h1>Book list</h1>
+<table border="1">
+<tr>
+    <th>ISBN13</th>
+    <th>Title</th>
+    <th>Authors</th>
+    <th>Available Stock</th>
+    <th>Actions</th>
+</tr>
+<tr th:each="book : ${books}">
+    <td th:text="${book.isbn13}">978-13-235088-4</td>    
+    <td th:text="${book.title}">Clean Code</td>
+    <td th:text="${book.authors}">Robert C. Martin</td>
+    <td th:text="${book.availableStock}">5</td>
+    <td>
+        <a th:href="@{'/book/edit/' + ${book.id}}">Edit</a>
+        <a th:href="@{'/book/delete/' + ${book.id}}">Delete</a>
+    </td>
+</tr>
+</table>
+</section>
+
+<section>
+<h1>Insert new</h1>
+<form action="#" th:action="@{'/book/insert/'}" method="post">
+    <p>ISBN13: <input type="text" name="isbn13" /></p>
+    <p>Title: <input type="text" name="title" /></p>
+    <p>Authors: <input type="text" name="authors" /></p>
+    <p>Available stock: <input type="text" name="availableStock" /></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
+</section>
+</body>
+</html>
+

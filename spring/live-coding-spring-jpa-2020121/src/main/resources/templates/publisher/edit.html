@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Publisher details</title>
+</head>
+<body>
+<h3>Publisher details</h3>
+<form action="#" th:action="@{/publisher/upsert}" th:object="${publisher}" method="post">
+    <input th:field="*{id}" type="hidden">
+    <label for="name">Name:</label>
+    <input th:field="*{name}" required type="text">
+    <br><br>    
+    <input type="submit" value="Update">
+    <input type="reset" value="Reset" />    
+</form>
+<h4>Books</h4>
+<ul>  
+  <li th:each="book : ${publisher.books}" th:text="${book.title}">Clean Code</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Book list</title>
+</head>
+<body>
+<section>
+<h1>Book list</h1>
+<table border="1">
+<tr>
+    <th>ISBN13</th>
+    <th>Title</th>
+    <th>Authors</th>
+    <th>Available Stock</th>
+</tr>
+<tr th:each="book : ${books}">
+    <td th:text="${book.isbn13}">978-13-235088-4</td>    
+    <td th:text="${book.title}">Clean Code</td>
+    <td th:text="${book.authors}">Robert C. Martin</td>
+    <td th:text="${book.availableStock}">5</td>
+</tr>
+</table>
+</section>
+</body>
+</html>
+

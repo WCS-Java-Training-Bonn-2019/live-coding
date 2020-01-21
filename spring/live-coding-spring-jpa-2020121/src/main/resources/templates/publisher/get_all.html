@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Publisher list</title>
+</head>
+<body>
+<section>
+<h1>Publisher list</h1>
+<table border="1">
+<tr>
+    <th>Name</th>
+    <th>Actions</th>
+</tr>
+<tr th:each="publisher : ${publishers}">
+    <td th:text="${publisher.name}">Prentice Hall</td>    
+    <td>
+        <a th:href="@{'/publisher/edit/' + ${publisher.id}}">Edit</a>
+        <a th:href="@{'/publisher/delete/' + ${publisher.id}}">Delete</a>
+    </td>
+</tr>
+</table>
+</section>
+
+<section>
+<br>
+<a th:href="@{'/publisher/new'}">Insert new</a><br>
+<a th:href="@{/}">Back</a>
+</section>
+</body>
+</html>
+
