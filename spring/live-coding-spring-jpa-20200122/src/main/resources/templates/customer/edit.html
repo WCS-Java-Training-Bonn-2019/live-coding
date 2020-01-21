@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer details</title>
+</head>
+<body>
+<h1>Customer details</h1>
+<form action="#" th:action="@{/customer/upsert}" th:object="${customer}" method="post">
+    <input th:field="*{id}" type="hidden">
+    <label for="firstName">First name:</label>
+    <input th:field="*{firstName}" required type="text">
+    <br><br>
+    <label for="lastName">Last name:</label>
+    <input th:field="*{lastName}" required type="text">    
+    <br><br>
+    <label for="address">Address:</label>
+    <input th:field="*{address}" required type="text">    
+    <br><br> 
+    <input type="submit" value="Save">
+    <input type="reset" value="Reset" />
+</form>
+</body>
+</html>

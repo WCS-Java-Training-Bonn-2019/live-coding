@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Order list</title>
+</head>
+<body>
+<section>
+<h1>Order list</h1>
+<table border="1">
+<tr>
+    <th>Id</th>
+    <th>Book</th>
+    <th>Customer</th>
+    <th>Amount</th>
+    <th>Actions</th>
+</tr>
+<tr th:each="order : ${orders}">
+    <td th:text="${order.id}">4711</td>
+    <td th:text="${order.book.title}">Clean Code</td>
+    <td th:text="${order.customer.firstName + ' ' + order.customer.lastName}">Clean Code</td>
+    <td th:text="${order.amount}">01-01-2020</td>    
+    <td>
+        <a th:href="@{'/order/edit/' + ${order.id}}">Edit</a>
+        <a th:href="@{'/order/delete/' + ${order.id}}">Delete</a>
+    </td>
+</tr>
+</table>
+</section>
+
+<section>
+<br>
+<a th:href="@{'/order/new'}">Insert new</a><br>
+<a th:href="@{/}">Back</a>
+</section>
+</body>
+</html>
+

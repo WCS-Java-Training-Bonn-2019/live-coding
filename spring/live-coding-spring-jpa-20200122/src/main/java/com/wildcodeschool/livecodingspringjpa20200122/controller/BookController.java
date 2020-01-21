@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.wildcodeschool.livecodingspringjpa20200122.entity.Book;
-import com.wildcodeschool.livecodingspringjpa20200122.entity.Publisher;
 import com.wildcodeschool.livecodingspringjpa20200122.repository.AuthorRepository;
 import com.wildcodeschool.livecodingspringjpa20200122.repository.BookRepository;
 import com.wildcodeschool.livecodingspringjpa20200122.repository.PublisherRepository;
