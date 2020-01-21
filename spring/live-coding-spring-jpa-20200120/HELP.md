@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.wildcodeschool.live-coding-spring-jpa-2020120' is invalid and this project uses 'com.wildcodeschool.livecodingspringjpa2020120' instead.
+* The original package name 'com.wildcodeschool.live-coding-spring-jpa-20200120' is invalid and this project uses 'com.wildcodeschool.livecodingspringjpa20200120' instead.
 
 # Getting Started
 

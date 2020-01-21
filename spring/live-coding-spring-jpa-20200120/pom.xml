@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.wildcodeschool</groupId>
-	<artifactId>live-coding-spring-jpa-2020120</artifactId>
+	<artifactId>live-coding-spring-jpa-20200120</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>live-coding-spring-jpa-2020120</name>
+	<name>live-coding-spring-jpa-20200120</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

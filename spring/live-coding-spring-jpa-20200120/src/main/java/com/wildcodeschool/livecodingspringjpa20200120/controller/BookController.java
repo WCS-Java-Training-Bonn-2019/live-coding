@@ -1,4 +1,4 @@
-package com.wildcodeschool.livecodingspringjpa2020120.controller;
+package com.wildcodeschool.livecodingspringjpa20200120.controller;
 
 import java.util.Optional;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.wildcodeschool.livecodingspringjpa2020120.entity.Book;
-import com.wildcodeschool.livecodingspringjpa2020120.repository.BookRepository;
+import com.wildcodeschool.livecodingspringjpa20200120.entity.Book;
+import com.wildcodeschool.livecodingspringjpa20200120.repository.BookRepository;
 
 @Controller
 public class BookController {

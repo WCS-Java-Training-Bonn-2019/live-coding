@@ -1,4 +1,4 @@
-package com.wildcodeschool.livecodingspringjpa2020120.entity;
+package com.wildcodeschool.livecodingspringjpa20200120.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
