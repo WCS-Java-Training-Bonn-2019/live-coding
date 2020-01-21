@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Book list</title>
+</head>
+<body>
+<section>
+<h1>Book list</h1>
+<table border="1">
+<tr>
+    <th>ISBN13</th>
+    <th>Title</th>
+    <th>Number of authors</th>
+    <th>Available stock</th>
+    <th>Actions</th>
+</tr>
+<tr th:each="book : ${books}" th:object="${book}">
+    <td th:text="*{isbn13}">978-13-235088-4</td>    
+    <td th:text="*{title}">Clean Code</td>
+    <td th:text="${#lists.size(book.authors)}">1</td>
+    <td th:text="*{availableStock}">5</td>
+    <td>
+        <a th:href="@{'/book/edit/' + *{id}}">Edit</a>
+        <a th:href="@{'/book/delete/' + *{id}}">Delete</a>
+    </td>
+</tr>
+</table>
+</section>
+
+<section>
+<br>
+<a th:href="@{'/book/new'}">Insert new</a><br>
+<a th:href="@{/}">Back</a>
+</section>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit book</title>
+</head>
+<body>
+<h3>Edit book:</h3>
+<form action="#" th:action="@{/book/update}" th:object="${book}" method="post">
+    <input th:field="*{id}" type="hidden">
+    <label for="isbn13">ISBN13:</label>
+    <input th:field="*{isbn13}" required type="text">
+    <br><br>
+    <label for="title">Title:</label>
+    <input th:field="*{title}" required type="text">
+    <br><br>
+    <label for="authors">Authors:</label>
+    <input th:field="*{authors}" required type="text">
+    <br><br>
+    <label for="availableStock">Available stock</label>
+    <input th:field="*{availableStock}" required type="text">
+    <br><br>
+    <label for="publisher">Publisher</label>
+    <select th:field="*{publisher}">
+	  <option value="volvo" th:remove="tag">Prentice Hall</option>
+	  <option value="saab" th:remove="tag">Schneider Publishing</option>
+	  <option th:each="publisher : ${allPublishers}" th:value="${publisher.id}" th:text="${publisher.name}"></option>	  
+	</select>
+    <br><br>	
+    <label for="authors">Authors</label>
+    <section id="authors">
+      <section th:remove="all">
+	      <input type="checkbox" id="author_1" name="author" value="1">
+	      <label for="author_1">Robert C. Martin</label>
+	      <br>
+      </section>
+      <section th:each="author : ${allAuthors}">
+	      <input type="checkbox" th:field="*{authorList}" th:value="${author.id}" />
+	      <label th:for="${#ids.prev('authorList')}" th:text="${author.lastName}"></label>
+	      <br>
+      </section>
+	</section>
+	<br><br>
+    <input type="submit" value="Update">
+    <input type="reset" value="Reset" />
+</form>
+</body>
+</html>

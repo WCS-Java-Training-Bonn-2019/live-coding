@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Book shop management area</title>
+</head>
+<body>
+<h1>Book shop management area</h1>
+<p>
+<a th:href="@{'/books'}">Manage books</a>
+<a th:href="@{'/authors'}">Manage authors</a>
+<a th:href="@{'/publishers'}">Manage publishers</a>
+</p>
+<p>
+<form action="#" th:action="@{'/books/search'}" method="get">
+   <label>Search book by title</label>
+   <input name="title" placeholder="Clean Code" required type="text">
+   <input type="submit" value="Send">
+</form>
+</p>
+</body>
+</html>
