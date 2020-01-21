@@ -19,7 +19,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
 	List<Book> getByTitleContainingOrAuthorsContaining(String title, String authors);
 
-	List<Book> getByTitleContainingOrAuthorsContainingOrderByAvailableStockDesc(String title, String authors);
+	List<Book> getByTitleContainingOrAuthorsLastNameContainingOrderByAvailableStockDesc(String title, String authors);
 	
 	List<Book> getTop2ByTitleContainingOrAuthorsContainingOrderByAvailableStockDesc(String title, String authors);
 

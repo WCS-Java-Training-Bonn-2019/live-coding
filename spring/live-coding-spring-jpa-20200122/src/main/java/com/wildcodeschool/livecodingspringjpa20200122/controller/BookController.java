@@ -33,29 +33,6 @@ public class BookController {
 		this.authorRepository = authorRepository;
 	}
 
-	@ResponseBody
-	@GetMapping("/testcascadePersist")
-	public String testCascadePersist() {
-		Publisher publisher = new Publisher();
-		publisher.setName("TestPublisher");
-		Book book = new Book();
-		book.setTitle("Test Book");
-		book.setIsbn13("xxxx-xxxx-xxx");
-		publisher.getBooks().add(book);
-		book.setPublisher(publisher);
-		publisherRepository.save(publisher);
-		return "done";
-	}
-
-	@ResponseBody
-	@GetMapping("/testcascadeRefresh")
-	public String testCascadeRefresh() {
-		Publisher publisher = publisherRepository.getOne(7L);
-		publisher.setName("Geänderter Name");
-		publisherRepository.save(publisher);
-		return "done";
-	}
-
 	@GetMapping("/books")
 	public String getAll(Model model) {
 		model.addAttribute("books", repository.findAll());
@@ -63,9 +40,9 @@ public class BookController {
 	}
 
 	@GetMapping("/books/search")
-	public String searchByTitle(Model model, @RequestParam String title) {
+	public String search(Model model, @RequestParam String searchString) {
 		model.addAttribute("books",
-				repository.getByTitleContainingOrAuthorsContainingOrderByAvailableStockDesc(title, title));
+				repository.getByTitleContainingOrAuthorsLastNameContainingOrderByAvailableStockDesc(searchString, searchString));
 		return "book/get_all";
 	}
 
