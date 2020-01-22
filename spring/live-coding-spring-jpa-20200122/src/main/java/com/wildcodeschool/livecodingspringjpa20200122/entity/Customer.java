@@ -1,9 +1,13 @@
 package com.wildcodeschool.livecodingspringjpa20200122.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Customer {
@@ -17,6 +21,9 @@ public class Customer {
 	private String lastName;
 	
 	private String address;
+	
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
+	private List<Order> orders;
 
 	public Long getId() {
 		return id;
@@ -48,6 +55,14 @@ public class Customer {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 
 }

@@ -1,38 +1,41 @@
 package com.wildcodeschool.livecodingspringjpa20200122.entity;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "customer_order")
 public class Order {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	private Long id;
 
+	@EmbeddedId
+	private OrderId id;
+
+//	@Id
 	@ManyToOne
-	@JoinColumn
+	@MapsId("bookId")
 	private Book book;
-	
+
+//	@Id
 	@ManyToOne
-	@JoinColumn
+	@MapsId("customerId")
 	private Customer customer;
 
 	private Integer amount;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
+//	public Long getId() {
+//		return id;
+//	}
+//
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 
 	public Integer getAmount() {
 		return amount;
@@ -56,6 +59,14 @@ public class Order {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public OrderId getId() {
+		return id;
+	}
+
+	public void setId(OrderId id) {
+		this.id = id;
 	}
 
 }

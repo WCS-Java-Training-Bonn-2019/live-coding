@@ -9,20 +9,20 @@
 <h1>Order list</h1>
 <table border="1">
 <tr>
-    <th>Id</th>
+    <th>Id (book/customer)</th>
     <th>Book</th>
     <th>Customer</th>
     <th>Amount</th>
     <th>Actions</th>
 </tr>
 <tr th:each="order : ${orders}">
-    <td th:text="${order.id}">4711</td>
+    <td th:text="${order.book.id} + '/' + ${order.customer.id}">4711</td>
     <td th:text="${order.book.title}">Clean Code</td>
     <td th:text="${order.customer.firstName + ' ' + order.customer.lastName}">Clean Code</td>
     <td th:text="${order.amount}">01-01-2020</td>    
     <td>
-        <a th:href="@{'/order/edit/' + ${order.id}}">Edit</a>
-        <a th:href="@{'/order/delete/' + ${order.id}}">Delete</a>
+        <a th:href="@{'/order/edit/' + ${order.book.id} + '/' + ${order.customer.id}}">Edit</a>
+        <a th:href="@{'/order/delete/' + ${order.book.id} + '/' + ${order.customer.id}}">Delete</a>
     </td>
 </tr>
 </table>

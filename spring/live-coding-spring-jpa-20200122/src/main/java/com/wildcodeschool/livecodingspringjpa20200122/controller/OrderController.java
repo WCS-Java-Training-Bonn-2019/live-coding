@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.wildcodeschool.livecodingspringjpa20200122.entity.Order;
+import com.wildcodeschool.livecodingspringjpa20200122.entity.OrderId;
 import com.wildcodeschool.livecodingspringjpa20200122.repository.BookRepository;
 import com.wildcodeschool.livecodingspringjpa20200122.repository.CustomerRepository;
 import com.wildcodeschool.livecodingspringjpa20200122.repository.OrderRepository;
@@ -40,17 +41,18 @@ public class OrderController {
 
 	@PostMapping("/order/upsert")
 	public String insert(@ModelAttribute Order order) {
+		order.setId(new OrderId(order.getBook().getId(), order.getCustomer().getId()));
 		order = repository.save(order);
 		return "redirect:/orders";
 	}
 
-	@GetMapping({ "/order/new", "/order/edit/{id}" })
-	public String edit(Model model, @PathVariable(required = false) Long id) {
+	@GetMapping({ "/order/new", "/order/edit/{bookId}/{customerId}" })
+	public String edit(Model model, @PathVariable(required = false) Long bookId, @PathVariable(required = false) Long customerId) {
 		model.addAttribute("allBooks", bookRepository.findAll());
 		model.addAttribute("allCustomers", customerRepository.findAll());
 		Order order = new Order();
-		if (id != null) {
-			Optional<Order> optionalOrder = repository.findById(id);
+		if (bookId != null && customerId != null) {
+			Optional<Order> optionalOrder = repository.findById(new OrderId(bookId, customerId));
 			if (optionalOrder.isPresent()) {
 				order = optionalOrder.get();
 			} else {
@@ -61,9 +63,9 @@ public class OrderController {
 		return "order/edit";
 	}
 
-	@GetMapping("/order/delete/{id}")
-	public String delete(@PathVariable("id") long id) {
-		repository.deleteById(id);
+	@GetMapping("/order/delete/{bookId}/{customerId}")
+	public String delete(@PathVariable(required = false) Long bookId, @PathVariable(required = false) Long customerId) {
+		repository.deleteById(new OrderId(bookId, customerId));
 		return "redirect:/orders";
 	}
 

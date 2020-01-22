@@ -7,7 +7,6 @@
 <body>
 <h1>Order details</h1>
 <form action="#" th:action="@{/order/upsert}" th:object="${order}" method="post">
-    <input th:field="*{id}" type="hidden">
     <label for="amount">Amount</label>
     <input th:field="*{amount}" required type="text">
     <br><br>
