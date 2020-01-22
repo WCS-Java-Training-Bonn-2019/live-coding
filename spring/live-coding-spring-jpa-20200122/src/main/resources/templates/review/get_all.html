@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Review list</title>
+</head>
+<body>
+<section>
+<h1>Review list</h1>
+<table border="1">
+<tr>
+    <th>Id (Book/Customer)</th>
+    <th>Book</th>
+    <th>Customer</th>
+    <th>Rating</th>
+    <th>Actions</th>
+</tr>
+<tr th:each="review : ${reviews}">
+    <td th:text="${review.book.id} + '/' + ${review.customer.id}">4711</td>
+    <td th:text="${review.book.title}">Clean Code</td>
+    <td th:text="${review.customer.firstName + ' ' + review.customer.lastName}">Clean Code</td>
+    <td th:text="${review.rating}">5</td>    
+    <td>
+        <a th:href="@{'/review/edit/' + ${review.book.id} + '/' + ${review.customer.id}}">Edit</a>
+        <a th:href="@{'/review/delete/' + ${review.book.id} + '/' + ${review.customer.id}}">Delete</a>
+    </td>
+</tr>
+</table>
+</section>
+
+<section>
+<br>
+<a th:href="@{'/review/new'}">Insert new</a><br>
+<a th:href="@{/}">Back</a>
+</section>
+</body>
+</html>
+

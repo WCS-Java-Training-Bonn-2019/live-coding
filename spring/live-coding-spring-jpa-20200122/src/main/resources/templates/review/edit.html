@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Review details</title>
+</head>
+<body>
+<h1>Review details</h1>
+<form action="#" th:action="@{/review/upsert}" th:object="${review}" method="post">
+    <label for="rating">Rating</label>
+    <input th:field="*{rating}" required type="text">
+    <br><br>
+    <label for="text">Text</label>
+    <input th:field="*{text}" required type="text">
+    <br><br>
+    <label for="book">Book</label>
+    <select th:field="*{book}">
+	  <option value="">Nicht ausgewählt</option>
+	  <option th:each="book : ${allBooks}" th:value="${book.id}" th:text="${book.title}"></option>	  
+	</select>
+	<br><br>
+	<label for="customer">Customer</label>
+    <select th:field="*{customer}">
+	  <option value="">Nicht ausgewählt</option>
+	  <option th:each="customer : ${allCustomers}" th:value="${customer.id}" th:text="${customer.firstName + ' ' + customer.lastName}"></option>	  
+	</select>
+    <br><br> 
+    <input type="submit" value="Save">
+    <input type="reset" value="Reset" />
+</form>
+</body>
+</html>
