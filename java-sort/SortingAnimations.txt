@@ -1,0 +1,24 @@
+
+Bubble Sort Animation:
+https://www.youtube.com/watch?v=9I2oOAr2okY
+
+Selection Sort Animation:
+https://www.youtube.com/watch?v=wnKQsow7ERI
+
+Insertion Sort Animation:
+https://www.youtube.com/watch?v=cvUHYiC6sf8
+
+Quick Sort Animation:
+https://www.youtube.com/watch?v=tIYMCYooo3c
+
+Merge Sort Animation:
+https://www.youtube.com/watch?v=dxuIwsPKRts
+
+Merge Sort versus Quick Sort Animation:
+https://youtu.be/es2T6KY45cA?t=137
+
+Heap Sort Animation:
+https://www.youtube.com/watch?v=6iA9JMnP3O4
+
+15 Sorting Algorithms in 6 Minutes:
+https://www.youtube.com/watch?v=kPRA0W1kECg
