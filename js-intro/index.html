@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<button id="btn1">Button 1</button>
+<button id="btn2">Button 2</button>
+
+<script>
+
+  // select all buttons
+  document.querySelectorAll( 'button' ).forEach( function ( button ) {
+
+    // set a click event for the button
+    button.addEventListener( 'click', function () {
+
+      // is first button? => show message box with 'Hurra!'
+      if ( button.getAttribute( 'id' ) === 'btn1' ) {
+        alert( 'Hurra!' );
+      }
+      // is second button? => show message box with 'Alaaf!' three times
+      else {
+        for ( let i = 0; i < 3; i++ ) {
+          alert( 'Alaaf!' );
+        }
+      }
+
+    } );
+  } );
+</script>
+
+<!-- load and execute JavaScript from file -->
+<script src="script.js"></script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script>
+  const request = new XMLHttpRequest();
+  request.open( 'POST', 'https://ccm2.inf.h-brs.de', true );
+  request.setRequestHeader( 'Content-Type', 'application/json' );
+  request.onreadystatechange = () => {
+    if ( request.readyState === 4 )
+      request.status >= 200 && request.status < 300 ? success( request.responseText ) : error( request );
+  };
+  request.send( JSON.stringify( { store: 'dms-apps', get: {} } ) );
+
+  function success( response ) {
+    console.log( 'Success!', JSON.parse( response ) );
+  }
+
+  function error( error ) {
+    console.log( 'Error!', error );
+  }
+</script>
